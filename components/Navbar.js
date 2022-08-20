@@ -8,7 +8,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <ul>
-        <li>
+        <li className="liFeed">
           <Link href="/">
             <button
               className="btn feedBtn"
@@ -18,9 +18,19 @@ export default function Navbar() {
             </button>
           </Link>
         </li>
-        <li>
+        <li className="liRight liAbout">
           <Link href="/about">
             <button className="btn aboutBtn">About</button>
+          </Link>
+        </li>
+        <li className="liRight liContact">
+          <Link href="">
+            <button className="btn contactBtn">Contact</button>
+          </Link>
+        </li>
+        <li className="liRight liLogin">
+          <Link href="/enter">
+            <button className="btn loginBtn">Login</button>
           </Link>
         </li>
       </ul>

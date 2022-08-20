@@ -54,7 +54,7 @@ img {
   top: 0;
   padding: 0 10vw;
   font-weight: bold;
-  border-bottom: 1px solid var(--color-gray);
+  border-bottom: 1px solid darkblue;
   z-index: 99;
 }
 .navbar ul {
@@ -63,8 +63,19 @@ img {
   padding: 0;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   height: 100%;
+}
+.liFeed {
+  align-items: left;
+  display: flex;
+  margin-right: auto;
+}
+.liRight {
+  align-items: right;
+  display: flex;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 /* Buttons */
 .feedBtn {
@@ -87,4 +98,48 @@ img {
   text-decoration: none;
   padding: 15px 32px;
   font-size: 16px;
+}
+.contactBtn {
+  background-color: white;
+  color: darkblue;
+  border: 2px solid darkblue;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  padding: 15px 32px;
+  font-size: 16px;
+}
+.loginBtn {
+  background-color: white;
+  color: darkblue;
+  border: 2px solid darkblue;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  padding: 15px 32px;
+  font-size: 16px;
+}
+
+/* Enter Page */
+.btn-google {
+  margin-top: 80px;
+}
+
+/* About Page */
+.greeting {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+.bio {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  color: darkblue;
+}
+.backBtn {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: darkblue;
 }
