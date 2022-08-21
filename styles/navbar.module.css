@@ -3,12 +3,12 @@
   height: 70px;
   width: 100%;
   background: white;
-  color: var(--colors-text);
+  color: var(--color-text);
   position: fixed;
   top: 0;
   padding: 0 10vw;
   font-weight: bold;
-  border-bottom: 1px solid darkblue;
+  border-bottom: 1px solid var(--color-border);
   z-index: 99;
 }
 .navbar ul {
@@ -39,9 +39,9 @@
   font-size: 16px;
 }
 .createBtn {
-  background-color: white;
-  color: darkblue;
-  border: 2px solid darkblue;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  border: 2px solid var(--color-border);
   border-radius: 8px;
   text-align: center;
   text-decoration: none;
@@ -50,9 +50,9 @@
   margin-right: 10px;
 }
 .aboutBtn {
-  background-color: white;
-  color: darkblue;
-  border: 2px solid darkblue;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  border: 2px solid var(--color-border);
   border-radius: 8px;
   text-align: center;
   text-decoration: none;
@@ -61,9 +61,9 @@
   margin-right: 10px;
 }
 .contactBtn {
-  background-color: white;
-  color: darkblue;
-  border: 2px solid darkblue;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  border: 2px solid var(--color-border);
   border-radius: 8px;
   text-align: center;
   text-decoration: none;
@@ -72,9 +72,9 @@
   margin-right: 10px;
 }
 .loginBtn {
-  background-color: white;
-  color: darkblue;
-  border: 2px solid darkblue;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  border: 2px solid var(--color-border);
   border-radius: 8px;
   text-align: center;
   text-decoration: none;

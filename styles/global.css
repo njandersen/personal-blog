@@ -1,3 +1,10 @@
+:root {
+  --color-border: darkblue;
+  --color-text: darkblue;
+  --color-background: white;
+  --color-gray: gray;
+}
+
 html,
 body {
   padding: 0;
@@ -42,6 +49,16 @@ img {
   100% {
     transform: rotate(360deg);
   }
+}
+
+/* Index Page I.E Main Page */
+.card {
+  padding: 2rem;
+  margin: 1rem 0;
+  background-color: White;
+  border: 1px solid var(--color-gray);
+  border-radius: 8px;
+  box-shadow: 10px 10px 5px var(--color-gray);
 }
 
 /* Enter Page */

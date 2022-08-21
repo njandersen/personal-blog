@@ -18,15 +18,17 @@ export async function getServerSideProps() {
 export default function Home({ posts }) {
   return (
     <Layout home>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
-      <section className={utilStyles.headingMd}>
-        <p>
-          Ny name is Nicholas Jordan Andersen. I'm a software engineering
-          student, dad, and general nerd.
-        </p>
-      </section>
+      <div className="card card-about">
+        <Head>
+          <title>{siteTitle}</title>
+        </Head>
+        <section className={utilStyles.headingMd}>
+          <p>
+            Ny name is Nicholas Jordan Andersen. I'm a software engineering
+            student, dad, and general nerd.
+          </p>
+        </section>
+      </div>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
