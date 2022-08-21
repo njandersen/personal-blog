@@ -5,7 +5,7 @@ import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 
 const name = "N. J. Andersen";
-export const siteTitle = "Next.js Sample Website";
+export const siteTitle = "From The Mind of N. J. Andersen";
 
 export default function Layout({ children, home }) {
   return (

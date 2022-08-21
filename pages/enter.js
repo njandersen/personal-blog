@@ -37,6 +37,3 @@ function SignInButton() {
 function SignOutButton() {
   return <button onClick={() => auth.signOut()}>Sign Out</button>;
 }
-
-// Enter username
-function UsernameForm() {}

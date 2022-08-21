@@ -44,82 +44,6 @@ img {
   }
 }
 
-/* Navbar settings */
-.navbar {
-  height: 70px;
-  width: 100%;
-  background: white;
-  color: var(--colors-text);
-  position: fixed;
-  top: 0;
-  padding: 0 10vw;
-  font-weight: bold;
-  border-bottom: 1px solid darkblue;
-  z-index: 99;
-}
-.navbar ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-.liFeed {
-  align-items: left;
-  display: flex;
-  margin-right: auto;
-}
-.liRight {
-  align-items: right;
-  display: flex;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-/* Buttons */
-.feedBtn {
-  background-color: darkblue;
-  border: none;
-  border-radius: 8px;
-  color: white;
-  text-align: center;
-  padding: 15px 32px;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
-.aboutBtn {
-  background-color: white;
-  color: darkblue;
-  border: 2px solid darkblue;
-  border-radius: 8px;
-  text-align: center;
-  text-decoration: none;
-  padding: 15px 32px;
-  font-size: 16px;
-}
-.contactBtn {
-  background-color: white;
-  color: darkblue;
-  border: 2px solid darkblue;
-  border-radius: 8px;
-  text-align: center;
-  text-decoration: none;
-  padding: 15px 32px;
-  font-size: 16px;
-}
-.loginBtn {
-  background-color: white;
-  color: darkblue;
-  border: 2px solid darkblue;
-  border-radius: 8px;
-  text-align: center;
-  text-decoration: none;
-  padding: 15px 32px;
-  font-size: 16px;
-}
-
 /* Enter Page */
 .btn-google {
   margin-top: 80px;
@@ -142,4 +66,8 @@ img {
   justify-content: center;
   text-decoration: none;
   color: darkblue;
+}
+
+.createHello {
+  margin-top: 80px;
 }
