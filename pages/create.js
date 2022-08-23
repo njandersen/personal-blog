@@ -1,11 +1,16 @@
+import { useRouter } from "next/router";
 import { useState } from "react";
+import { createPost } from "../lib/firebase";
 
 const CreatePost = () => {
+  const router = useRouter();
   const [formValues, setFormValues] = useState({
     title: "",
     slug: "",
     content: "",
   });
+
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
     const id = e.target.id;
@@ -16,43 +21,71 @@ const CreatePost = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Check for any missing values in form.
+    let missingValue = [];
+    Object.entries(formValues).forEach(([key, value]) => {
+      if (!value) {
+        missingValue.push(key);
+      }
+    });
+
+    // Send an alert on what field are missing.
+    if (missingValue.length > 1) {
+      alert(`You're missing these fields: ${missingValue.join(", ")}`);
+      return;
+    }
+
+    setIsLoading(true);
+
+    createPost(formValues)
+      .then(() => {
+        setIsLoading(false);
+        router.push("/");
+      })
+      .catch((err) => {
+        alert(err);
+        setIsLoading(false);
+      });
   };
 
   return (
     <>
       <div className="card create-form">
-        <div className="header">
-          <h1 className="createHello">Create a new post.</h1>
-        </div>
-        <div className="title-container">
-          <label htmlFor="title">Title</label>
-          <input
-            id="title"
-            type="text"
-            value={formValues.title}
-            onChange={handleChange}
-          />
-          <div className="slug-container">
-            <label htmlFor="slug">Slug</label>
+        <form onSubmit={handleSubmit}>
+          <div className="header">
+            <h1 className="createHello">Create a new post.</h1>
+          </div>
+          <div className="title-container">
+            <label htmlFor="title">Title</label>
             <input
-              id="slug"
+              id="title"
               type="text"
-              value={formValues.slug}
+              value={formValues.title}
               onChange={handleChange}
             />
-            <div className="content-container">
-              <label hmtlFor="content">Content</label>
-              <textarea
-                id="content"
-                value={formValues.content}
+            <div className="slug-container">
+              <label htmlFor="slug">Slug</label>
+              <input
+                id="slug"
+                type="text"
+                value={formValues.slug}
                 onChange={handleChange}
               />
+              <div className="content-container">
+                <label hmtlFor="content">Content</label>
+                <textarea
+                  id="content"
+                  value={formValues.content}
+                  onChange={handleChange}
+                />
+              </div>
             </div>
           </div>
-        </div>
-        <button className="btn submit-btn" type="submit">
-          Post
-        </button>
+          <button className="btn submit-btn" type="submit" disabled={isLoading}>
+            {isLoading ? "Creating..." : "Post"}
+          </button>
+        </form>
       </div>
     </>
   );

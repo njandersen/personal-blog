@@ -48,7 +48,7 @@ export default function Home({ posts }) {
             <div className="card card-post">
               <li className={utilStyles.listItem} key={post.slug}>
                 <h3>{post.title}</h3>
-                {/* <Date dateString={post.dateCreated} /> */}
+                {/* <Date dateString={post.date} /> */}
                 <h4>{post.date}</h4>
                 <div
                   dangerouslySetInnerHTML={{
