@@ -5,6 +5,7 @@ import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import Date from "../components/date";
 import { getPosts } from "../lib/firebase";
+import moment from "moment";
 
 const name = "N. J. Andersen";
 export const siteTitle = "From The Mind of N. J. Andersen";
@@ -49,12 +50,13 @@ export default function Home({ posts }) {
               <li className={utilStyles.listItem} key={post.slug}>
                 <h3>{post.title}</h3>
                 {/* <Date dateString={post.date} /> */}
-                <h4>{post.date}</h4>
+                <h4>{moment(post.date).format("LL")}</h4>
                 <div
                   dangerouslySetInnerHTML={{
                     __html: `${post.content.substring(0, 200)}...`,
                   }}
                 />
+                <a href={`/posts/${post.slug}`}>Continue Reading</a>
               </li>
             </div>
           ))}
