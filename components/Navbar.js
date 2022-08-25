@@ -33,7 +33,12 @@ export default function Navbar() {
         </li>
         <li>
           <Link href="">
-            <button className={styles.contactBtn}>Contact</button>
+            <button
+              className={styles.contactBtn}
+              onClick={() => toast.error("Sorry this isn't implemented yet.")}
+            >
+              Contact
+            </button>
           </Link>
         </li>
         <li>

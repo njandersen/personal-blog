@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { createPost } from "../lib/firebase";
 import { useContext } from "react";
 import { AuthContext } from "../lib/context";
+import toast from "react-hot-toast";
 
 const CreatePost = () => {
   const { user } = useContext(AuthContext);
@@ -55,6 +56,9 @@ const CreatePost = () => {
     if (!user) router.push("/");
   }, [user]);
 
+  // Toast notifications
+  const notify = () => toast.success("Post Published!");
+
   return (
     <>
       <div className="card create-form">
@@ -88,7 +92,12 @@ const CreatePost = () => {
               </div>
             </div>
           </div>
-          <button className="btn submit-btn" type="submit" disabled={isLoading}>
+          <button
+            className="btn submit-btn"
+            onClick={notify}
+            type="submit"
+            disabled={isLoading}
+          >
             {isLoading ? "Creating..." : "Post"}
           </button>
         </form>

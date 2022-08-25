@@ -16,7 +16,7 @@ export default function PostPage({ post }) {
   return (
     <main>
       {post.map((post) => (
-        <div className="post-page-container">
+        <div className="card post-page-container">
           <h1>{post.title}</h1>
           <h2>Published {moment(post.date).format("LL")}</h2>
           <p dangerouslySetInnerHTML={{ __html: post.content }}></p>

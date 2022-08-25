@@ -6,7 +6,12 @@ import utilStyles from "../styles/utils.module.css";
 import { getPosts } from "../lib/firebase";
 import moment from "moment";
 
+let wordCount = "";
+let minutesToRead = (wordCount / 100 + 1).toFixed(0);
+
 const name = "N. J. Andersen";
+const shortAbout =
+  "My name is Nicholas Jordan Andersen. I'm a software engineering student, dad, and general nerd.";
 export const siteTitle = "From The Mind of N. J. Andersen";
 
 export async function getServerSideProps() {
@@ -35,27 +40,31 @@ export default function Home({ posts }) {
         />
         <h1 className={utilStyles.heading2Xl}>{name}</h1>
         <section className={utilStyles.headingMd}>
-          <p>
-            Ny name is Nicholas Jordan Andersen. I'm a software engineering
-            student, dad, and general nerd.
-          </p>
+          <p className="short-about">{shortAbout}</p>
         </section>
       </div>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
           {posts.map((post) => (
             <div className="card card-post">
               <li className={utilStyles.listItem} key={post.slug}>
                 <h3>{post.title}</h3>
-                {/* <Date dateString={post.date} /> */}
                 <h4>{moment(post.date).format("LL")}</h4>
                 <div
                   dangerouslySetInnerHTML={{
                     __html: `${post.content.substring(0, 200)}...`,
                   }}
                 />
-                <a href={`/posts/${post.slug}`}>Continue Reading</a>
+                <div className="post-footer">
+                  <p className="word-counter">
+                    {(wordCount = post?.content.trim().split(/\s+/g).length)}{" "}
+                    words. {minutesToRead} min read.
+                  </p>
+
+                  <a className="post-link" href={`/posts/${post.slug}`}>
+                    Continue Reading
+                  </a>
+                </div>
               </li>
             </div>
           ))}

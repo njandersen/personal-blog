@@ -1,16 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
 :root {
-  --color-border: darkblue;
-  --color-text: darkblue;
+  --color-border: #395b64;
+  --color-text: #395b64;
   --color-background: white;
-  --color-gray: gray;
+  --color-gray: #cfd2cf;
 }
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Open sans";
+  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
   line-height: 1.6;
   font-size: 18px;
 }
@@ -20,12 +23,13 @@ body {
 }
 
 a {
-  color: #0070f3;
+  color: #a5c9ca;
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
+  color: #2c3333;
 }
 
 img {
@@ -67,16 +71,20 @@ img {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-color: #a5c9ca;
+  color: #2c3333;
+  max-height: 600px;
+  padding-top: 1rem;
 }
 .card-post {
   padding-top: 0;
-  margin-top: 50px;
+  margin-top: 100px;
   margin-bottom: 50px;
 }
 .create-form {
   padding-top: 0;
   padding-bottom: 4rem;
-  background-color: darkblue;
+  background-color: #a5c9ca;
   color: white;
 }
 
@@ -89,6 +97,21 @@ img {
 }
 .profile-pic {
   border-radius: 9999px;
+}
+.short-about {
+  padding-left: 2rem;
+}
+.post-footer {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.word-counter {
+  margin-right: 4rem;
+  font-style: italic;
+}
+.post-link {
+  margin-left: 4rem;
 }
 
 /* Create Page */
@@ -107,7 +130,7 @@ label {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: darkblue;
+  background-color: #a5c9ca;
   color: white;
 }
 
@@ -122,16 +145,22 @@ label {
   font-size: 16px;
   margin-right: 10px;
 }
-
-/* Enter Page */
-.btn-google {
-  margin-top: 80px;
-}
-.login-card {
-  margin-top: 300px;
+.submit-btn:hover {
+  background-color: #395b64;
+  color: white;
+  transition-duration: 0.4s;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 /* About Page */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+}
 .greeting {
   margin-top: 100px;
   display: flex;
@@ -141,7 +170,8 @@ label {
   margin-top: 50px;
   display: flex;
   justify-content: center;
-  color: darkblue;
+  color: #2c3333;
+  width: 500px;
 }
 .backBtn {
   display: flex;
@@ -150,6 +180,54 @@ label {
   color: darkblue;
 }
 
+/* Post Page */
 .post-page-container {
-  margin-top: 500px;
+  margin-top: 150px;
+}
+
+/* Login Page */
+.login-greeting {
+  margin-top: 100px;
+}
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.signInBtn {
+  background-color: var(--color-border);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  text-align: center;
+  padding: 15px 32px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.signOutBtn {
+  background-color: var(--color-border);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  text-align: center;
+  padding: 15px 32px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 2rem;
+  margin-right: 2rem;
+}
+.login-btn:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+.login-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 150px;
+  padding-bottom: 2rem;
 }
