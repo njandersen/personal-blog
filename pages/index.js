@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import utilStyles from "../styles/utils.module.css";
-import Link from "next/link";
-import Date from "../components/date";
+
 import { getPosts } from "../lib/firebase";
 import moment from "moment";
 

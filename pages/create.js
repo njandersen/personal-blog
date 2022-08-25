@@ -1,8 +1,11 @@
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createPost } from "../lib/firebase";
+import { useContext } from "react";
+import { AuthContext } from "../lib/context";
 
 const CreatePost = () => {
+  const { user } = useContext(AuthContext);
   const router = useRouter();
   const [formValues, setFormValues] = useState({
     title: "",
@@ -48,6 +51,9 @@ const CreatePost = () => {
         setIsLoading(false);
       });
   };
+  useEffect(() => {
+    if (!user) router.push("/");
+  }, [user]);
 
   return (
     <>

@@ -1,11 +1,11 @@
 import Link from "next/link";
+import { useContext } from "react";
 import toast from "react-hot-toast";
+import { AuthContext } from "../lib/context";
 import styles from "../styles/navbar.module.css";
 
 export default function Navbar() {
-  const user = null;
-  const username = null;
-
+  const { user } = useContext(AuthContext);
   return (
     <nav className={styles.navbar}>
       <ul>
@@ -19,11 +19,13 @@ export default function Navbar() {
             </button>
           </Link>
         </li>
-        <li className={styles.liCreate}>
-          <Link href="/create">
-            <button className={styles.createBtn}>Create Post</button>
-          </Link>
-        </li>
+        {user && (
+          <li className={styles.liCreate}>
+            <Link href="/create">
+              <button className={styles.createBtn}>Create Post</button>
+            </Link>
+          </li>
+        )}
         <li>
           <Link href="/about">
             <button className={styles.aboutBtn}>About</button>

@@ -1,13 +1,16 @@
 import Navbar from "../components/Navbar";
 import "../styles/global.css";
 import { Toaster } from "react-hot-toast";
+import { AuthProvider } from "../lib/context";
 
 export default function App({ Component, pageProps }) {
   return (
     <>
-      <Navbar />
-      <Component {...pageProps} />
-      <Toaster />
+      <AuthProvider>
+        <Navbar />
+        <Component {...pageProps} />
+        <Toaster />
+      </AuthProvider>
     </>
   );
 }
