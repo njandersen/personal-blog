@@ -113,6 +113,12 @@ img {
 .post-link {
   margin-left: 4rem;
 }
+@media screen and (max-width: 480px) {
+  .main {
+    justify-content: center;
+    flex-direction: column;
+  }
+}
 
 /* Create Page */
 textarea {
